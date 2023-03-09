@@ -29,6 +29,7 @@ const reducer = (state, action) => {
         products: state.products.map((product) => {
           if (product.id == action.payload) {
             product.added = false;
+            product.quantity = 1;
           }
           return product;
         }),
