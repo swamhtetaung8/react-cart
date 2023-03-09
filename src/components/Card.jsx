@@ -17,7 +17,7 @@ const Card = ({ product }) => {
         alt=""
       />
       <p className=" my-3 text-slate-600 font-bold text-2xl">
-        $ {product.price}
+        $ {product.originalPrice}
       </p>
       <div className=" flex gap-3 justify-center">
         <button

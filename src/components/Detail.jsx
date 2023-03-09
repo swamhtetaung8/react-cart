@@ -28,7 +28,7 @@ const Detail = () => {
         <div className=" flex justify-between items-center">
           <p>{detailProduct.title}</p>
           <p className=" bg-green-500 px-4 py-1 text-white rounded-full">
-            ${detailProduct.price}
+            ${detailProduct.originalPrice}
           </p>
         </div>
         <p className=" my-2 flex items-center gap-3">
