@@ -16,7 +16,7 @@ const CartItem = ({ cartItem }) => {
       </p>
       <div className="  my-3 flex justify-between items-center">
         <button
-          className=" bg-red-500 py-2 px-4 rounded-md text-white"
+          className=" bg-red-500 py-2 md:px-4 px-2 rounded-md text-white"
           onClick={() => {
             dispatch({ type: "REMOVE_ITEM", payload: cartItem.id });
           }}>

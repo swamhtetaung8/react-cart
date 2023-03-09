@@ -10,7 +10,7 @@ const Navbar = () => {
   } = useContextCustom();
   return (
     <nav className=" shadow-lg">
-      <ul className=" flex items-center justify-between p-3">
+      <ul className=" flex items-center justify-between p-3 flex-col md:flex-row gap-5 md:gap-0">
         <li className=" flex items-center gap-3 ">
           <Link to="/">
             <h1 className=" text-xl md:text-2xl font-bold tracking-wide md:tracking-wider uppercase">
@@ -25,7 +25,7 @@ const Navbar = () => {
             onChange={(e) => setSearch(e.target.value)}
           />
         </li>
-        <li>
+        <li className=" self-end pr-3">
           <Link to="/addtocart">
             <button
               type="button"
