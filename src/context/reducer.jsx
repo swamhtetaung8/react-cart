@@ -30,6 +30,7 @@ const reducer = (state, action) => {
           if (product.id == action.payload) {
             product.added = false;
             product.quantity = 1;
+            product.price = product.originalPrice;
           }
           return product;
         }),
