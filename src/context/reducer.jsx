@@ -70,6 +70,7 @@ const reducer = (state, action) => {
           products: state.products.map((product) => {
             product.added = false;
             product.price = product.originalPrice;
+            product.quantity = 1;
             return product;
           }),
           cart: [],
