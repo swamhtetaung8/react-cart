@@ -45,7 +45,7 @@ const Detail = () => {
                 key={index}
                 size={20}
                 className={`inline-block ${
-                  Math.ceil(Number(detailProduct.rating.rate)) > index
+                  Math.round(Number(detailProduct.rating.rate)) > index
                     ? "text-yellow-400"
                     : "text-gray-300"
                 }`}
