@@ -2,14 +2,19 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useContextCustom } from "../context/StateProvider";
 import CartItem from "./CartItem";
-
+import { motion, spring } from "framer-motion";
 const AddToCart = () => {
   const {
     state: { cart },
     dispatch,
   } = useContextCustom();
   return (
-    <div className=" p-5 w-[90%] mx-auto flex flex-col">
+    <motion.div
+      animate={{ x: 0 }}
+      initial={{ x: "-100vw" }}
+      exit={{ x: "-100vw" }}
+      transition={{ duration: 0.7 }}
+      className=" p-5 w-[90%] mx-auto flex flex-col">
       <h1 className=" text-3xl font-semibold tracking-wide mb-5">Your Cart</h1>
       {cart.length == 0 && (
         <h1 className=" text-center my-10 tracking-wider uppercase font-medium text-4xl">
@@ -42,7 +47,7 @@ const AddToCart = () => {
           Go back to Home
         </Link>
       )}
-    </div>
+    </motion.div>
   );
 };
 

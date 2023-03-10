@@ -2,6 +2,7 @@ import React from "react";
 import { useContextCustom } from "../context/StateProvider";
 import Card from "./Card";
 import { CgSpinnerTwoAlt } from "react-icons/cg";
+import { motion } from "framer-motion";
 const Product = () => {
   const {
     state: { products },

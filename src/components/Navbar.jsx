@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { BsCart2 } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import { useContextCustom } from "../context/StateProvider";
+import { motion } from "framer-motion";
 const Navbar = () => {
   const {
     search,
@@ -27,15 +28,22 @@ const Navbar = () => {
         </li>
         <li className=" self-end pr-3">
           <Link to="/addtocart">
-            <button
+            <motion.button
+              animate={cart.length > 0 ? { scale: 1.1 } : {}}
+              initial={{ y: 0 }}
+              transition={
+                cart.length > 0 ? { repeat: Infinity, duration: 1 } : {}
+              }
               type="button"
               className="relative inline-flex items-center p-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
               <BsCart2 />
               <span className="sr-only"></span>
-              <div className="absolute inline-flex items-center justify-center w-6 h-6 text-xs font-bold text-white bg-red-500 rounded-full -top-2 -right-2">
-                {cart.length}
-              </div>
-            </button>
+              {cart.length > 0 && (
+                <div className="absolute inline-flex items-center justify-center w-6 h-6 text-xs font-bold text-white bg-red-500 rounded-full -top-2 -right-2">
+                  {cart.length}
+                </div>
+              )}
+            </motion.button>
           </Link>
         </li>
       </ul>

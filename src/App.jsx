@@ -6,18 +6,21 @@ import Detail from "./components/Detail";
 import Navbar from "./components/Navbar";
 import Product from "./components/Product";
 import { useContextCustom } from "./context/StateProvider";
+import { AnimatePresence } from "framer-motion";
 const App = () => {
   const { state } = useContextCustom();
   // console.log(state);
   return (
-    <BrowserRouter>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Product />} />
-        <Route path="/detail/:id" element={<Detail />} />
-        <Route path="/addtocart" element={<AddToCart />} />
-      </Routes>
-    </BrowserRouter>
+    <AnimatePresence>
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Product />} />
+          <Route path="/detail/:id" element={<Detail />} />
+          <Route path="/addtocart" element={<AddToCart />} />
+        </Routes>
+      </BrowserRouter>
+    </AnimatePresence>
   );
 };
 

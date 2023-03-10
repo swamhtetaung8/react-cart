@@ -4,6 +4,7 @@ import { useContextCustom } from "../context/StateProvider";
 import { AiFillStar } from "react-icons/ai";
 import { GiWorld } from "react-icons/gi";
 import { RiMoneyDollarCircleLine } from "react-icons/ri";
+import { motion } from "framer-motion";
 const Detail = () => {
   const { id } = useParams();
   const {
@@ -15,7 +16,12 @@ const Detail = () => {
   console.log(detailProduct);
 
   return (
-    <div className=" w-screen flex flex-col md:flex-row gap-10 lg:gap-40 px-10 py-20">
+    <motion.div
+      animate={{ x: 0 }}
+      initial={{ x: "100vw" }}
+      exit={{ x: "100vw" }}
+      transition={{ duration: 0.5 }}
+      className=" w-screen flex flex-col md:flex-row gap-10 lg:gap-40 px-10 py-20">
       <div className=" md:w-[30%] w-full">
         <img
           src={detailProduct.image}
@@ -99,7 +105,7 @@ const Detail = () => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
