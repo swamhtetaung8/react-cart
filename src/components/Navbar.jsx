@@ -26,7 +26,7 @@ const Navbar = () => {
             onChange={(e) => setSearch(e.target.value)}
           />
         </li>
-        <li className=" self-end pr-3">
+        <li className=" self-end pr-3 md:pr-0">
           <Link to="/addtocart">
             <motion.button
               animate={cart.length > 0 ? { scale: 1.1 } : {}}
