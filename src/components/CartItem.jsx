@@ -16,7 +16,7 @@ const CartItem = ({ cartItem }) => {
       </p>
       <div className="  my-3 flex justify-between items-center">
         <button
-          className=" bg-red-500 py-2 md:px-4 px-2 rounded-md text-white"
+          className=" bg-red-500 py-2 md:px-4 px-2 rounded-md text-white hover:bg-red-400 transition-all duration-100"
           onClick={() => {
             dispatch({ type: "REMOVE_ITEM", payload: cartItem.id });
           }}>
@@ -24,7 +24,7 @@ const CartItem = ({ cartItem }) => {
         </button>
         <div className=" flex gap-3 items-center">
           <button
-            className=" bg-red-500 px-4 py-2 text-white border border-red-500 cursor-pointer rounded-l"
+            className=" bg-red-500 px-4 py-2 text-white border border-red-500 cursor-pointer rounded-l active:bg-red-600  hover:bg-red-400 transition-all duration-100"
             onClick={() =>
               dispatch({ type: "DECREASE", payload: cartItem.id })
             }>
@@ -32,7 +32,7 @@ const CartItem = ({ cartItem }) => {
           </button>
           <p className=" w-6 text-end">{cartItem.quantity}</p>
           <button
-            className=" bg-blue-500 px-4 py-2 text-white border border-blue-500 cursor-pointer rounded-r"
+            className=" bg-blue-500 px-4 py-2 text-white border border-blue-500 cursor-pointer rounded-r active:bg-blue-600 hover:bg-blue-400 transition-all duration-100"
             onClick={() =>
               dispatch({ type: "INCREASE", payload: cartItem.id })
             }>

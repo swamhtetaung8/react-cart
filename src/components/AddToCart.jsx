@@ -34,7 +34,7 @@ const AddToCart = () => {
       )}
       {cart.length > 0 ? (
         <button
-          className=" self-center bg-red-500 py-3 px-6 rounded-md text-white"
+          className=" self-center bg-red-500 py-3 px-6 rounded-md text-white  active:bg-red-600  hover:bg-red-400 transition-all duration-100"
           onClick={() => {
             dispatch({ type: "CLEAR_CART" });
           }}>
@@ -43,7 +43,7 @@ const AddToCart = () => {
       ) : (
         <Link
           to="/"
-          className="self-center bg-yellow-500 py-3 px-6 rounded-md text-white">
+          className="self-center bg-yellow-500 py-3 px-6 rounded-md text-white  active:bg-yellow-600  hover:bg-yellow-400 transition-all duration-100">
           Go back to Home
         </Link>
       )}
